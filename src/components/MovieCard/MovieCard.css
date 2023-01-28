@@ -1,0 +1,5 @@
+.cardh:hover {
+    transform: scale(1.06);
+    box-shadow: 3px 11px 68px 21px rgba(0, 0, 0, 0.75);
+    z-index: 1;
+}

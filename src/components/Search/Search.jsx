@@ -26,12 +26,13 @@ const Search = () => {
         <Form className="d-flex" onSubmit={submitHandler}>
             <Form.Control
                 type="search"
-                placeholder="Buscar Pelicula"
+                placeholder="...palabra clave"
                 className="me-1"
                 aria-label="Search"
                 name='keyword'
+                style={{textAlign:"right"}}                
             />
-            <Button variant="success" type="submit">Search</Button>
+            <Button variant="success" type="submit">Buscar</Button>
         </Form>
     )
 }

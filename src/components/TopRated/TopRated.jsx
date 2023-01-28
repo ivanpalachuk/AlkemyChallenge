@@ -4,38 +4,25 @@ import { FavsContext } from '../../context/FavsContext';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-import axios from "axios"
 
-import "./Listado.css"
+import "../Listado/Listado.css"
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function Listado() {
+
+function TopRated() {
 
 
-    const [moviesList, setMovieList] = useState([])
-    const { addOrRemoveFromFavs } = useContext(FavsContext)
+    //const [moviesList, setMovieList] = useState([])
+    const { addOrRemoveFromFavs, apiCall, moviesList } = useContext(FavsContext)
 
-    useEffect(() => {
-        const endPoint = "https://api.themoviedb.org/3/discover/movie?api_key=7caf46531396de643008db1c668fdc90&language=es"
-        axios.get(endPoint)
-            .then(res => {
-                const apiData = res.data
-                setMovieList(apiData.results)
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }, [setMovieList])
-
-
+    apiCall("https://api.themoviedb.org/3/movie/top_rated?api_key=7caf46531396de643008db1c668fdc90&language=es&page=1")
 
     const token = sessionStorage.getItem("token")
 
 
     return (
         <>
-            {!token && <Navigate to="/" />}
             <div className='row'>
                 {moviesList.map((oneMovie, idx) => {
                     return (
@@ -71,16 +58,16 @@ function Listado() {
                                     }}>
                                         <CircularProgressbar value={oneMovie.vote_average * 10} text={`${oneMovie.vote_average * 10}%`} styles={{ text: { fontSize: "30px" } }} />
                                     </div>
+
                                     <Link to={`/detail/${oneMovie.id}`}><Button variant="dark">Detalles</Button></Link>
                                 </Card.Body>
                             </Card>
                         </div>
                     )
                 })}
-
             </div>
         </>
     )
 }
 
-export default Listado
+export default TopRated

@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card'
 const Footer = () => {
     return (
         <footer>
-            <Card>
+            <Card fixed="bottom">
                 <Card.Header>Disclaimer</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">

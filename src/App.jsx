@@ -8,10 +8,12 @@ import Footer from "./components/Footer/Footer"
 import Detail from "./components/Detail/Detail"
 import SearchResults from "./components/SearchResults/SearchResults"
 import Favourites from "./components/Favourites/Favourites"
+import Landing from "./components/Landing/Landing"
 
 
 import "./css/App.css"
 import "./css/bootstrap.min.css"
+import TopRated from "./components/TopRated/TopRated"
 
 
 function App() {
@@ -22,11 +24,13 @@ function App() {
         <FavsProvider>
           <Header />
           <Routes>
-            <Route index path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
+            <Route index path="/" element={<Landing />} />
             <Route path="/listado" element={<Listado />} />
             <Route path="/detail/:id" element={<Detail />} />
             <Route path="/resultados/:keyword" element={<SearchResults />} />
             <Route path="/favourites" element={<Favourites />} />
+            <Route path="/toprated" element={<TopRated />} />
           </Routes>
           <Footer />
         </FavsProvider>
