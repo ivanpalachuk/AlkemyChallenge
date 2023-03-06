@@ -61,7 +61,7 @@ const Login = () => {
 
     return (
         <>
-            {token && <Navigate to="/listado" replace />}
+            {token && <Navigate to="/novedades" replace />}
             <h2>Formulario Login</h2>
 
             <Form onSubmit={submitHandler}>

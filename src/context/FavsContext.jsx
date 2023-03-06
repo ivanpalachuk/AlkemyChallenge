@@ -34,13 +34,13 @@ export function FavsProvider({ children }) {
         const poster_path = parent.querySelector("img").getAttribute("src")
         const overview = parent.querySelector("p").innerText
         const title = parent.querySelector("title").innerText
-        //const vote_average = parent.querySelectorAll("div")
+        const vote_average = parent.attributes[0].value
         const movieData = {
             poster_path,
             title,
             overview,
-            id: btn.dataset.movieId,
-            //vote_average,
+            id: btn.dataset.movieId * 1,
+            vote_average,
         }
 
 
@@ -52,7 +52,6 @@ export function FavsProvider({ children }) {
             tempMoviesInFavs.push(movieData);
             localStorage.setItem("favs", JSON.stringify(tempMoviesInFavs));
             setFavourites(tempMoviesInFavs);
-            console.log('Se agrego a favs')
 
         } else {
             let moviesLeft = tempMoviesInFavs.filter(oneMovie => {
@@ -60,13 +59,12 @@ export function FavsProvider({ children }) {
             });
             localStorage.setItem('favs', JSON.stringify(moviesLeft));
             setFavourites(moviesLeft);
-            console.log('Se saco de favs')
         }
 
     }
 
-    const [moviesList, setMovieList] = useState([])
 
+    const [moviesList, setMovieList] = useState([])
     const apiCall = (url) => {
         useEffect(() => {
             const endPoint = url
@@ -80,8 +78,6 @@ export function FavsProvider({ children }) {
                 })
         }, [setMovieList])
     }
-
-
 
 
     return (
