@@ -12,7 +12,7 @@ function NewMovies(props) {
 
     return (
         <>
-            {!token && <Navigate to="/" />}
+          {  /*{!token && <Navigate to="/" />}*/}
            <MovieList movies={movies}/>
         </>
     )
