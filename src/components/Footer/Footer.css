@@ -1,0 +1,20 @@
+#footer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.ft {
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration-style: none;
+       }
+
+.fm {
+    color: rgba(255, 255, 255, 0.55);
+        text-decoration: none;
+        cursor: pointer;
+}
+
+.fm:hover{
+    color:rgba(255, 255, 255, 0.75);
+}

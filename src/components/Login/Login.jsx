@@ -53,7 +53,7 @@ const Login = () => {
             .then(res => {
                 const tokenFromAPI = res.data.token;
                 sessionStorage.setItem('token', tokenFromAPI);
-                navigate("/listado");
+                navigate("/novedades");
             })
     }
 
