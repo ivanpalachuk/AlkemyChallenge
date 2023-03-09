@@ -9,7 +9,8 @@ function NewMovies(props) {
     apiCall(props.url)
     const token = sessionStorage.getItem("token")
     const movies = moviesList
-
+    
+    console.log(movies)
     return (
         <>
           {  /*{!token && <Navigate to="/" />}*/}

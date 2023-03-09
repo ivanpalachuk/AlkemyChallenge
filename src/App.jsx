@@ -26,7 +26,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/login" element={<Login />} />
-            <Route index path="/" element={<Landing />} />
+            <Route index path="/" element={<Landing url="https://api.themoviedb.org/3/discover/movie?api_key=7caf46531396de643008db1c668fdc90&language=es" />} />
             <Route path="/detail/:id" element={<Detail />} />
             <Route path="/resultados/:keyword" element={<SearchResults />} />
             <Route path="/favourites" element={<Favourites />} />
