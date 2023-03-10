@@ -1,32 +1,25 @@
-import CarouselS from '../Carousel/Carousel';
-import { FavsContext } from '../../context/FavsContext';
-import { useContext} from 'react';
+import CarouselS from '../CarouselS/CarouselS';
 import { Navigate } from 'react-router-dom';
-
-
+import { useContext, useEffect } from 'react'
+import { FavsContext } from '../../context/FavsContext';
 
 function Landing(props) {
 
-    console.log(props.url)
     const { apiCall, moviesList } = useContext(FavsContext)
 
-
-    apiCall(props.url)
+    useEffect(() => {
+        apiCall(props.url);
+    }, [props.url]);
 
     const token = sessionStorage.getItem("token")
     const movies = moviesList
 
-
     return (
         <>
-            {!token && <Navigate to="/login" />}
-            <CarouselS movies={movies} />
+            {!token && <Navigate to="/" />}
+            <CarouselS movies={movies}/>
         </>
-
     )
 }
 
-
-
-
-export default Landing;
+export default Landing
