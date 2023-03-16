@@ -2,9 +2,18 @@ import Search from '../Search/Search';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/esm/Button';
+import { useAuth } from '../../context/AuthContext';
 
 
 const Header = () => {
+
+  const { user, logOut } = useAuth()
+
+  const handleClick = () => { logOut() }
+  console.log(user)
+
+
   return (
     <header style={{ marginBottom: "5rem" }}>
       <Navbar bg="dark" variant="dark" fixed='top'>
@@ -24,7 +33,16 @@ const Header = () => {
             <Nav.Link href="/toprated">Mas Valoradas</Nav.Link>
             <Nav.Link href="/favourites">Favoritos</Nav.Link>
           </Nav>
-          <Search />
+          {user ?
+            <>
+              <Search />
+              <Button variant="danger" type="submit" href='/login' style={{ marginLeft: '10px' }} onClick={handleClick}>Logout</Button>
+            </> :
+            <>
+              <Button variant="success" type="submit" href='/login' style={{ marginRight: '10px' }}>Ingresa</Button>
+              <Button variant="outline-secondary" type="submit" href='/register'>Registrate</Button>
+            </>
+          }
         </Container>
       </Navbar>
     </header>

@@ -3,7 +3,7 @@ import Spinner from "react-bootstrap/Spinner"
 
 
 function CarouselS(props) {
-    console.log(props)
+
     return (
         props.movies.length > 0 ?
             <>
@@ -44,8 +44,9 @@ function CarouselS(props) {
                     </Carousel.Item>
                 </Carousel>
             </>
-            :
-            <Spinner animation='grow' />
+            : <div style={{ display: 'flex', justifyContent: "center", marginTop: "17rem", marginBottom: "28.5rem" }}>
+                <Spinner animation='grow' style={{ width: "5rem", height: "5rem" }} />
+            </div>
     )
 }
 

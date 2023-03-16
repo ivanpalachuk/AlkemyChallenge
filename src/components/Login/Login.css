@@ -1,0 +1,18 @@
+.logincontainer{
+    box-shadow: 3px 11px 68px 21px rgba(0, 0, 0, 0.75);
+    height: 25rem;
+    width: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10rem;
+    margin-top: 10rem;
+  }
+
+
+.loginbox{
+    width:50%;
+    justify-self: center;
+}

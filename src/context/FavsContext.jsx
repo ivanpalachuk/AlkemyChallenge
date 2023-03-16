@@ -64,7 +64,9 @@ export function FavsProvider({ children }) {
     }
 
     const [moviesList, setMovieList] = useState([])
+    
     const apiCall = (url) => {
+        useEffect(() => {
             const endPoint = url
             axios.get(endPoint)
                 .then(res => {
@@ -73,9 +75,10 @@ export function FavsProvider({ children }) {
                 })
                 .catch(err => {
                     console.log(err)
-                })        
+                })
+        }, [setMovieList])
     }
-
+   
 
     return (
         <FavsContext.Provider value={{ favourites, addOrRemoveFromFavs, apiCall, moviesList }}>
