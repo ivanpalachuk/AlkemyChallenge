@@ -1,12 +1,11 @@
-import { useContext } from 'react';
-import { FavsContext } from '../../context/FavsContext';
+import { useFavs } from '../../context/FavsContext';
 import MovieList from '../MovieList/MovieList';
 import LookingFavourites from '../LookingFavourites/LookingFavourites';
 
 const Favourites = () => {
 
 
-    const { favourites } = useContext(FavsContext)
+    const { favourites } = useFavs()
 
     return (
         <>

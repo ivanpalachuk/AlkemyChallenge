@@ -5,7 +5,7 @@ import Spinner from "react-bootstrap/Spinner"
 function ProtectedRoute({ children }) {
 
     const { user, loading } = useAuth()
-    console.log(user)
+
     if (loading) return <Spinner />
     if (!user) return <Navigate to="/login" />
     return <>{children}</>

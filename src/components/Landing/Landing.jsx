@@ -1,11 +1,9 @@
 import CarouselS from '../CarouselS/CarouselS';
-import { Navigate } from 'react-router-dom';
-import { useContext } from 'react'
-import { FavsContext } from '../../context/FavsContext';
+import { useFavs } from '../../context/FavsContext';
 
 function Landing(props) {
 
-    const { apiCall, moviesList } = useContext(FavsContext)
+    const { apiCall, moviesList } = useFavs()
 
     apiCall(props.url)
     const movies = moviesList

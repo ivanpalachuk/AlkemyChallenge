@@ -1,9 +1,6 @@
-import React from 'react'
-
 const LookingFavourites = () => {
   
-  
-    return (
+      return (
 
     <div style={
         {

@@ -1,10 +1,9 @@
-import { Navigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import Spinner from 'react-bootstrap/esm/Spinner'
 import axios from 'axios'
 
 const Detail = () => {
-
-    let token = sessionStorage.getItem("token")
 
     let { id } = useParams()
 
@@ -34,8 +33,8 @@ const Detail = () => {
     return (
 
         <>
-            {!token && <Navigate to="/" replace />}
-            {!movie && <p>Cargando</p>}
+
+            {!movie && <Spinner />}
             {movie &&
                 <>
                     <h2>{movie.title}</h2>

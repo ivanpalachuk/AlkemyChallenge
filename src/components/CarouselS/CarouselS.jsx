@@ -11,7 +11,7 @@ function CarouselS(props) {
                     <Carousel.Item>
                         <img
                             className="d-block w-100"
-                            src={`https://image.tmdb.org/t/p/w500/${props.movies[0].backdrop_path}`}
+                            src={`https://image.tmdb.org/t/p/original/${props.movies[0].backdrop_path}`}
                             alt="First slide"
                         />
                         <Carousel.Caption>
@@ -22,7 +22,7 @@ function CarouselS(props) {
                     <Carousel.Item>
                         <img
                             className="d-block w-100"
-                            src={`https://image.tmdb.org/t/p/w500/${props.movies[1].backdrop_path}`}
+                            src={`https://image.tmdb.org/t/p/original/${props.movies[1].backdrop_path}`}
                             alt="Second slide"
                         />
 
@@ -34,7 +34,7 @@ function CarouselS(props) {
                     <Carousel.Item>
                         <img
                             className="d-block w-100"
-                            src={`https://image.tmdb.org/t/p/w500/${props.movies[2].backdrop_path}`}
+                            src={`https://image.tmdb.org/t/p/original/${props.movies[2].backdrop_path}`}
                             alt="Third slide"
                         />
                         <Carousel.Caption>

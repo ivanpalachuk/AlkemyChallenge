@@ -1,9 +1,8 @@
-import { FavsContext } from '../../context/FavsContext';
+import { useFavs } from '../../context/FavsContext';
 import { Link } from 'react-router-dom'
-import { useContext } from 'react'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import Heart from '../Heart/Heart';
-import { useState } from 'react';
+
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -15,10 +14,10 @@ import "./MovieCard.css"
 
 const MovieCard = (props) => {
 
-    
-    const { addOrRemoveFromFavs } = useContext(FavsContext)
-   
- 
+
+    const { addOrRemoveFromFavs } = useFavs()
+
+
 
     return (
 
@@ -37,7 +36,7 @@ const MovieCard = (props) => {
 
             >
                 <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500/${props.movie.poster_path}`} style={{ height: "19rem" }} />
-                <button className='favourite-btn' data-movie-id={props.movie.id} onClick={addOrRemoveFromFavs}><Heart faved={props.movie.id}/></button>
+                <button className='favourite-btn' data-movie-id={props.movie.id} onClick={addOrRemoveFromFavs}><Heart faved={props.movie.id} /></button>
                 <Card.Body style={{ display: "flex", flexDirection: 'column', alignItems: "flex-start", justifyContent: "space-between" }} >
                     <Card.Title as="title" style={{ display: "block", fontWeight: "bolder", fontSize: "1.1rem" }}>{props.movie.title.substring(0, 20)}</Card.Title>
                     <Card.Text>

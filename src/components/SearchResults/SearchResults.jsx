@@ -29,7 +29,7 @@ const SearchResults = () => {
     return (
         <>
             {movieResults.length === 0 && <h2>Tu busqueda no arrojo resultados</h2>}
-            <h2>Buscaste:<em>{keyword}</em></h2>
+            <h2>Resultados de la busqueda para:<em>{keyword}</em></h2>
             <MovieList movies={movieResults} />
         </>
     )

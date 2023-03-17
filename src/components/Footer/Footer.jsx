@@ -37,7 +37,6 @@ function Footer() {
                             </p>
                         </div>
                         <hr className="w-100 clearfix d-md-none" />
-                        <hr className="w-100 clearfix d-md-none" />
 
 
                         <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-4">
@@ -46,7 +45,7 @@ function Footer() {
                             <p className='ft'><i className="fas fa-phone mr-3"></i>+54 9 2235251836 <a className="btn btn-outline-light btn-floating m-1" href="https://api.whatsapp.com/send?phone=5492235251836" role="button" target="_blank">
                                 <FontAwesomeIcon icon={faWhatsapp} /></a></p>
                             <p className='ft'><i className="fas fa-home mr-3"></i> Mar del plata, 7600, Argentina</p>
-                            
+
                         </div>
 
 
@@ -70,7 +69,7 @@ function Footer() {
 
                             <a className="btn btn-outline-light btn-floating m-1" href="https://github.com/ivanpalachuk" role="button" target="_blank">
                                 <FontAwesomeIcon icon={faGithub} /></a>
-                            <p><i className="fas fa-home mr-3"></i><a href="https://drive.google.com/file/d/1T3bdU2kJAMnyra3hF6Bihw-H_J5f-fK5/view?usp=share_link" download target="_blank">
+                            <p><i className="fas fa-home mr-3"></i><a href="../../../public/Curriculum.pdf" download target="_blank">
                                 <button className='btn btn-outline-light btn-floating m-1'>Descargar CV</button>
                             </a></p>
 

@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import { FavsProvider } from "./context/FavsContext"
 import { AuthProvider } from "./context/AuthContext"
-
 import Login from "./components/Login/Login"
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
@@ -31,7 +30,15 @@ function App() {
             <Routes>
               <Route path="/login" element={<Login />} />
               <Route index path="/" element={<Landing url="https://api.themoviedb.org/3/discover/movie?api_key=7caf46531396de643008db1c668fdc90&language=es" />} />
-              <Route path="/detail/:id" element={<Detail />} />
+
+              <Route
+                path="/detail/:id"
+                element={
+                  <ProtectedRoute>
+                    <Detail />
+                  </ProtectedRoute>
+                } />
+
               <Route path="/resultados/:keyword" element={<SearchResults />} />
 
               <Route
@@ -51,7 +58,7 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-              
+
               <Route path="*" element={<Navigate to="/404" />} />
               <Route path="/404" element={<NotFound />} />
               <Route path="/register" element={<Register />} />

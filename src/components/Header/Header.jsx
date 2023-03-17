@@ -11,8 +11,7 @@ const Header = () => {
   const { user, logOut } = useAuth()
 
   const handleClick = () => { logOut() }
-  console.log(user)
-
+  
 
   return (
     <header style={{ marginBottom: "5rem" }}>
@@ -30,7 +29,7 @@ const Header = () => {
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/novedades">Novedades</Nav.Link>
-            <Nav.Link href="/toprated">Mas Valoradas</Nav.Link>
+            <Nav.Link href="/toprated">Recomendadas</Nav.Link>
             <Nav.Link href="/favourites">Favoritos</Nav.Link>
           </Nav>
           {user ?

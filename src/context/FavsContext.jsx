@@ -1,7 +1,14 @@
-import { useState, createContext, useEffect } from "react";
+import { useState, createContext, useEffect, useContext } from "react";
 import axios from "axios"
 
 export const FavsContext = createContext()
+
+export const useFavs = () => {
+    const context = useContext(FavsContext)
+    if (!context) throw new Error("There is not auth provider")
+    return context
+}
+
 
 export function FavsProvider({ children }) {
 
@@ -64,7 +71,7 @@ export function FavsProvider({ children }) {
     }
 
     const [moviesList, setMovieList] = useState([])
-    
+
     const apiCall = (url) => {
         useEffect(() => {
             const endPoint = url
@@ -78,7 +85,7 @@ export function FavsProvider({ children }) {
                 })
         }, [setMovieList])
     }
-   
+
 
     return (
         <FavsContext.Provider value={{ favourites, addOrRemoveFromFavs, apiCall, moviesList }}>
