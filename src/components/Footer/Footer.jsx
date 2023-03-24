@@ -69,7 +69,7 @@ function Footer() {
 
                             <a className="btn btn-outline-light btn-floating m-1" href="https://github.com/ivanpalachuk" role="button" target="_blank">
                                 <FontAwesomeIcon icon={faGithub} /></a>
-                            <p><i className="fas fa-home mr-3"></i><a href="../../../public/Curriculum.pdf" download target="_blank">
+                            <p><i className="fas fa-home mr-3"></i><a href="/Curriculum.pdf" download target="_blank">
                                 <button className='btn btn-outline-light btn-floating m-1'>Descargar CV</button>
                             </a></p>
 
