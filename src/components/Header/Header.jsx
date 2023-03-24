@@ -38,8 +38,8 @@ const Header = () => {
                   <Button variant="danger" type="submit" href='/login' style={{ marginLeft: '10px' }} onClick={handleClick}>Logout</Button>
                 </> :
                 <>
-                  <Button variant="success" type="submit" href='/login' style={{ marginRight: '10px' }}>Ingresa</Button>
-                  <Button variant="outline-secondary" type="submit" href='/register'>Registrate</Button>
+                  <Button variant="success" type="submit" href='/login' style={{ marginRight: '10px' }} className='flex-grow-1'>Ingresa</Button>
+                  <Button variant="outline-secondary" type="submit" href='/register' className='flex-grow-1'>Registrate</Button>
                 </>
               }
             </Nav>
